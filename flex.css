@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Added to keep borders from breaking width */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2, h3, h4, h5 {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #add8e6;
+    margin-top: 20px;
+}
+
+p {
+    padding: 10px 0;
+}
+
+/* Base style for all containers */
+section[class^="flexcontainer"] {
+    border: 1px solid #add8e6;
+    display: flex;
+    padding: 8px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Base style for all items */
+.flexitem {
+    background: #add8e6;
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Concept 2: Direction */
+.flexcontainer2 {
+    flex-direction: column;
+}
+
+/* Concept 3: Justify Content */
+.flexcontainer3 {
+    justify-content: center;
+}
+
+.flexcontainer4 {
+    justify-content: space-between;
+}
+
+/* Concept 4: Align Items */
+.flexcontainer5 {
+    height: 150px;
+    align-items: center; /* This centers items vertically */
+}
+
+.short { height: 40px; }
+.tall { height: 120px; }
+
+/* Concept 5: Wrap */
+.flexcontainer6 {
+    flex-wrap: wrap;
+    width: 200px; /* Constrain width to force the wrap */
+}
+/* 6. Gap Styles */
+.flexcontainer7 {
+    border: 1px solid #ccc; /* Matches the light grey border in the image */
+    display: flex;
+    padding: 10px;
+    gap: 20px; /* This creates the space between A, B, and C */
+}
+
+/* Base style for the boxes */
+.flexcontainer7 .flexitem {
+    background-color: #add8e6;
+    height: 60px; /* Adjusted to look more like the proportions in the image */
+    width: 60px;
+    /* Removed the black border to match the clean look of the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for Section 7 */
+.flexcontainer8 {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 10px;
+    gap: 10px; /* Space between the growing boxes */
+}
+
+/* Base style for all items */
+.flexcontainer8 .flexitem {
+    background-color: #add8e6;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px; /* Gives some breathing room for text */
+}
+
+/* Specific Growth Rates */
+.g1 {
+    flex-grow: 1;
+}
+
+.g2 {
+    flex-grow: 2; /* This will be twice as large as g1 */
+}
+
+.nogrow {
+    flex-grow: 0;
+    width: 100px; /* Static width so it doesn't stretch */
+}
+
+.flexcontainer9 {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    /* We limit the width so the items are FORCED to try and shrink */
+    max-width: 250px; 
+}
+
+.flexcontainer9 .flexitem {
+    background-color: #add8e6;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Give them both a large starting width so they fight for space */
+    width: 200px; 
+}
+
+/* This item will get smaller to fit the container */
+.shrink-me {
+    flex-shrink: 1; 
+}
+
+/* This item will refuse to get smaller than 200px */
+.no-shrink {
+    flex-shrink: 0; 
+}
+
+
+/* Container for Section 9 */
+.flexcontainer10 {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* Base style for the items */
+.flexcontainer10 .flexitem {
+    background-color: #add8e6;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* This box will start at exactly 150px wide */
+.basis-150 {
+    flex-basis: 150px;
+}
+
+/* This box will only be as wide as the word "Auto" + some padding */
+.basis-auto {
+    flex-basis: auto;
+    padding: 0 20px; 
+}
+/* Container for Section 10 */
+.flexcontainer11 {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+.flexcontainer11 .flexitem {
+    background-color: #add8e6;
+    height: 80px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* We want "Default" to stay first, even though it's last in HTML */
+.item-1 {
+    order: 1; 
+}
+
+/* This will appear second */
+.item-2 {
+    order: 2;
+}
+
+/* This will appear third */
+.item-3 {
+    order: 3;
+}
+/* Container for Section 11 */
+.flexcontainer12 {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    /* We need a tall container so the boxes have room to move up/down */
+    height: 150px; 
+    /* Default alignment for anything we don't specify */
+    align-items: flex-start; 
+}
+
+.flexcontainer12 .flexitem {
+    background-color: #add8e6;
+    height: 50px; /* Fixed height for the boxes */
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual Alignments */
+.self-top {
+    align-self: flex-start; /* Pushes to the top */
+}
+
+.self-center {
+    align-self: center; /* Pushes to the vertical center */
+}
+
+.self-bottom {
+    align-self: flex-end; /* Pushes to the bottom */
+}
+
